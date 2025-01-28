@@ -1,13 +1,67 @@
-version: '3'
 services:
-  spring-boot-app:
+  gateway:
     build:
-      context: spring-boot-service
+      context: gateway
     ports:
-      - "8080:8080"
+      - "4000:4000"
+    env_file:
+      - .env
+    depends_on:
+      - supplierservice
+      - activityservice
+      - nuxt-app
 
-  vue-app:
-    build:
-      context: vue-frontend
+    restart: always
+  
+  db:
+    image: postgres:17
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
     ports:
-      - "8081:8080"
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+  
+  activityservice:
+    container_name: activityservice
+    build:
+      context: activity-service
+    ports:
+      - "4002:4002"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./activity-service/:/app/
+  
+  supplierservice:
+    container_name: supplierservice
+    build:
+      context: supplier-service
+    ports:
+      - "4001:4001"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./supplier-service/:/app/
+
+  nuxt-app:
+    build:
+      context: find-activity
+    ports:
+      - "3000:3000"  
+    env_file:
+      - .env  
+  
+
+
+volumes:
+  postgres_data:

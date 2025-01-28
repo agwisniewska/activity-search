@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets   = ["native", "linux-arm64-openssl-3.0.x"] // Add the target binary
+}
+
+datasource db {
+  provider = "postgresql" // or other DB like mysql, sqlite
+  url      = env("DATABASE_URL")
+}
+
+model Activity {
+  id           Int      @id @default(autoincrement())
+  title        String
+  price        Float
+  currency     String   @default("USD")
+  rating       Float    @default(0.0)
+  specialOffer Boolean  @default(false)
+  supplierId   Int
+}

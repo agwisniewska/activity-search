@@ -1,0 +1,26 @@
+{
+  "name": "node-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "@apollo/subgraph": "^2.9.3",
+    "@prisma/client": "6.2.1",
+    "apollo-server": "^3.13.0",
+    "dataloader": "^2.2.3",
+    "graphql": "^16.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.12.0",
+    "prisma": "6.2.1"
+  }
+}
