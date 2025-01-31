@@ -65,6 +65,32 @@
 import type { Activity } from '~/types/activity';
 import { gql } from '@apollo/client/core';
 
+useSeoMeta({
+  title: '[title]',
+  description: '[description]',
+  ogTitle: '[og:title]',
+  ogDescription: '[og:description]',
+  ogImage: '[og:image]',
+  ogUrl: '[og:url]',
+  twitterTitle: '[twitter:title]',
+  twitterDescription: '[twitter:description]',
+  twitterImage: '[twitter:image]',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png'
+    }
+  ]
+})
+
 // TODO: move all queries and types to a separate file and import them as needed
 type GQLActivities = {
   activities: {
