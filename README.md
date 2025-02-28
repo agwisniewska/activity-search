@@ -1,26 +1,16 @@
-# Project Architecture
+# Installation
 
-## How to run
+1. Clone repository
+`git clone https://github.com/USERNAME/find-activity.git`
 
-1. Navigate to the find-activity directory:
-
+2. Install dependencies
 `cd find-activity`
+`yarn`
 
-2. Install project dependencies:
+3. Start Docker containers
+`docker-compose up -d`
 
-`yarn install`
-
-3. Return to the root directory:
-
-`cd ..`
-
-4. Build and start the Docker containers:
-
-`docker-compose up --build`
-
-## Description
-
-# Technical Stack Description
+# Overview
 
 A server-side rendered (SSR) application built with Nuxt 3, featuring:
 
@@ -49,7 +39,8 @@ A server-side rendered (SSR) application built with Nuxt 3, featuring:
    - Responsive design (partially implemented)
    - Error handling with custom error pages
 
-## Overview
+
+# Details
 
 1. Frontend Interaction:
 
@@ -78,7 +69,7 @@ Utilizes Apollo Server to handle GraphQL requests, routing them to the appropria
 
 Separating backend functionalities into Activity Service and Supplier Service promotes scalability, maintainability, and fault isolation.
 
-## Missing Features
+# Missing Features
 
 1. Internationalization (i18n) Support
    What:
