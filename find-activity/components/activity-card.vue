@@ -8,7 +8,7 @@
       <div class="relative overflow-hidden rounded">
         <picture>
           <source
-            srcset="../assets/images/dummy-image.webp"
+            srcset="../assets/images/image.webp"
             type="image/webp"
           />
 

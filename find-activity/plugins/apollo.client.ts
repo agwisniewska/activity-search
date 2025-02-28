@@ -1,9 +1,6 @@
 import fetch from 'cross-fetch'
 import {
   createHttpLink,
-  execute,
-  toPromise,
-  type GraphQLRequest,
   type Operation,
   ApolloClient,
   InMemoryCache,

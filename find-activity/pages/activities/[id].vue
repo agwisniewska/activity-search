@@ -20,7 +20,7 @@
       <section class="col-span-1 md:col-span-2">
         <picture class="w-full h-[400px]">
           <source
-            srcset="../../assets/images/dummy-image.webp"
+            srcset="../../assets/images/image.webp"
             type="image/webp"
           />
           <source
